@@ -1,13 +1,15 @@
 CMAKE_MINIMUM_REQUIRED (VERSION 3.8)
-PROJECT(tbd C)
+PROJECT(server C)
 
-SET (CMAKE_C_STANDARD C11)
+SET (CMAKE_C_STANDARD 11)
 
-ADD_EXECUTABLE (tbd
+INCLUDE_DIRECTORIES(server include)
+
+ADD_EXECUTABLE (server
+    include/config.h
     include/net.h
     include/error.h
-    include/net.c
-    include/error.c
-    src/main.c
-)
+    src/error.c
+    src/net.c
+    src/main.c)
 
